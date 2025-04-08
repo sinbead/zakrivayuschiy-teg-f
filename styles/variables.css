@@ -1,14 +1,14 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-    --main-font: 'Inter';
-    --accent-font: 'Press Start 2P';
-    --font-normal: 400;
-    --font-bold: 700;
-    --page-width: clamp(23.438rem, 16.285rem + 30.52vw, 43.75rem);
-    --font-size-header-title: clamp(3.063rem, 2.71rem + 1.5vw, 4.063rem);
-    --font-size-header-subtitle: clamp(0.875rem, 0.677rem + 0.85vw, 1.438rem);
-    --stroke-color: rgba(255, 255, 255, 0.5);
-    --font-size-medium: 18px;
-    --font-size-small: 14px;
-    --main-border: 2px solid #000000;
+  --main-font: 'Inter';
+  --accent-font: 'Press Start 2P';
+  --font-normal: 400;
+  --font-bold: 700;
+  --page-width: clamp(23.438rem, 16.285rem + 30.52vw, 43.75rem);
+  --font-size-header-title: clamp(3.063rem, 2.71rem + 1.5vw, 4.063rem);
+  --font-size-header-subtitle: clamp(0.875rem, 0.677rem + 0.85vw, 1.438rem);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --font-size-medium: 18px;
+  --font-size-small: 14px;
+  --main-border: 2px solid #000000;
 }
