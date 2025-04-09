@@ -37,8 +37,8 @@
   margin: 100px 0px;
   padding-block: clamp(7.5rem, 7.324rem + 0.75vw, 8rem);
   padding-inline: clamp(0.875rem, -1.469rem + 10vw, 7.531rem);
-  font-family: var(--accent-font);
-  font-weight: var(--font-normal);
+  font-family: var(--accent-font) ;
+  font-weight: var(--font-weight-normal);
   text-transform: uppercase;
 }
 
@@ -53,30 +53,32 @@
 
 .card-article {
   background-color: #FFFFFF;
-  font-family: var(--main-font);
+  font-family: var(--main-font), sans-serif;
   margin-block-end: 50px;
-  border: var(--main-border);
 }
 
 .card__title {
-  font-weight: var(--font-bold);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
   padding-block: 5px;
   padding-inline: 10px;
   font-size: var(--font-size-medium);
-  border-block-end: var(--main-border);
+  border: var(--main-border);
 }
 
 .card__content {
   position: relative;
-  }
+  border-inline-start: var(--main-border);
+  border-inline-end: var(--main-border);
+}
 
 .card__image {
+  display: block;
   inline-size: 100%;
   aspect-ratio: 1;
   object-fit: cover;
   object-position: right;
-  border: var(--main-border);
-  }
+}
 
 .filter-grayscale {
   filter: grayscale(80%) opacity(90%);
@@ -133,33 +135,42 @@
 .card__content-text {
   display: flex;
   flex-direction: column;
-  gap: 27px;
-  margin: 25px;
+  gap: 26px;
+  padding: 25px;
+  border: var(--main-border);
 }
 
 .card__paragraph {
   font-size: var(--font-size-medium);
-  line-height: 1.16;
+  line-height: 1.165;
 }
 
 .card__button {
   display: flex;
   flex-direction: row;
-  gap: 12px;
+  gap: 6px;
   justify-content: flex-end;
-  padding-block-end: 25px;
-  padding-inline-end: 25px;
 }
 
 .card__icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
-  background-color: transparent;
-  align-self: flex-end;
+  background: none;
+  padding: 0;
+  inline-size: 39px;
+  transition: border 0.3s ease;
 }
+
+.card__icon-button:focus-visible {
+  outline: none;
+  border: var(--main-border);
+  }
 
 .card__like-button {
   border: var(--main-border);
-  background-color: transparent;
+  background: none;
   inline-size: 130px;
   block-size: 38px;
   display: flex;
@@ -169,7 +180,7 @@
 
 .button__text {
   font-family: var(--accent-font);
-  font-weight: var(--font-normal);
+  font-weight: var(--font-weight-normal);
   font-size: var(--font-size-small);
 }
 
@@ -177,7 +188,7 @@
   display: flex;
   justify-content: center;
   margin-block-end: 100px;
- }
+}
 
 .save__button {
   display: flex;
@@ -188,17 +199,94 @@
   border: var(--main-border);
   padding-block: 15px;
   padding-inline: 20px;
-  }
+}
 
-@media (min-width: 768px) {
+@media (width > 375px) {
   .save__button {
     flex-direction: row;
- }
- .save__icon {
-  block-size: 21px;
-  inline-size: 21px;
- }
-}  
+  }
+
+  .save__icon {
+    block-size: 21px;
+    inline-size: 21px;
+  }
+}
+
+.save__dialog {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr auto;
+  row-gap: 30px;
+  column-gap: 20px;
+  inline-size: var(--dialog-width);
+  align-items: center;
+  padding: 30px;
+}
+
+.dialog__text {
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.save__dialog:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+} 
+
+.save__dialog::backdrop {
+  background-color: rgb(0 0 0 / 75%);
+}
+
+.save__dialog .save__icon {
+  block-size: 39px;
+    inline-size: 39px;
+}
+
+.close__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: var(--main-border);
+  grid-column: span 2;
+  font-family: var(--accent-font);
+  font-size: var(--font-size-small);
+  text-transform: uppercase;
+  text-align: center;
+  padding-block: 12.5px;
+}
+
+.styled__button {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--main-btn-color);
+}
+
+.styled__button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0px 0px var(--accent-btn-color);
+  transition: 0.3s ease;
+}
+
+.styled__button::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background-color: black;
+  transform-origin: left center;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  
+}
+
+.styled__button:hover::before {
+  transform: translateX(0);
+  mix-blend-mode: difference;
+  color: black;
+  background-color: #fff;
+}
 
 .hidden {
   display: none;
