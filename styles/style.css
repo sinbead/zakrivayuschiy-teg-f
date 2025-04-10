@@ -55,7 +55,7 @@
 }
 
 .card__title {
-  font-weight: var(--font-weight-bold);
+  font-variation-settings: 'wght' var(--font-weight-bold);
   line-height: 1.2;
   padding-block: 5px;
   padding-inline: 10px;
@@ -157,7 +157,7 @@
   background: none;
   padding: 0;
   inline-size: 39px;
-  transition: border 0.3s ease;
+  transition: outline 0.3s ease;
 }
 
 .card__icon-button:focus {
@@ -261,12 +261,12 @@
   position: relative;
   overflow: hidden;
   background-color: var(--main-btn-color);
+  transition: transform 0.3s ease-in-out;
 }
 
 .styled__button:focus {
   outline: none;
   box-shadow: 2px 2px 0px 0px var(--accent-btn-color);
-  transition: 0.3s ease;
 }
 
 .styled__button::before {
@@ -274,18 +274,15 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  color: #fff;
-  background-color: black;
+  background-color: var(--main-btn-color);
   transform-origin: left center;
   transform: translateX(-100%);
   transition: transform 0.5s ease-in-out;
+  mix-blend-mode: difference;
 }
 
 .styled__button:hover::before {
   transform: translateX(0);
-  mix-blend-mode: difference;
-  color: black;
-  background-color: #fff;
 }
 
 .hidden {
