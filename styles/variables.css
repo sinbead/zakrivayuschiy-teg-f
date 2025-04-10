@@ -14,5 +14,6 @@
   --dialog-width: clamp(21.313rem, 21.048rem + 1.13vw, 22.063rem);
   --main-btn-color: #fff;
   --accent-btn-color: #000000;
-  --accent-heart-color: #FF0000;
-  }
+  --contour-color: #000000;
+  --animation-fill-color: #FF0000;
+   }
