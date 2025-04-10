@@ -78,31 +78,31 @@
 }
 
 .filter-grayscale {
-  filter: grayscale(80%) opacity(90%);
+  filter: grayscale(50%) opacity(90%);
 }
 
 .filter-saturate {
-  filter: saturate(500%);
+  filter: saturate(300%);
 }
 
 .filter-hue {
   filter: hue-rotate(35deg);
 }
 
-.filter-invert {
-  filter: invert(90%) opacity(80%);
+.filter-shadow {
+  filter: drop-shadow(15px 15px 15px blue);
 }
 
-.filter-sepia {
-  filter: sepia(90%);
+.filter-opacity {
+  filter: opacity(75%);
 }
 
 .filter-blur {
-  filter: blur(10px);
+  filter: blur(5px);
 }
 
 .filter-multi {
-  filter: hue-rotate(100deg) blur(1px) opacity(70%) brightness(80%) saturate(200%) grayscale(30%);
+  filter: hue-rotate(30deg) blur(1px) opacity(70%) brightness(80%) saturate(200%) grayscale(20%);
 }
 
 .card__logo {
