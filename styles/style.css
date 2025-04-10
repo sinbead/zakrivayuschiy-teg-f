@@ -13,7 +13,8 @@
 .page {
   inline-size: var(--page-width);
   min-block-size: 100dvb;
-  font-family: var(--main-font), sans-serif;
+  font-family: var(--main-font);
+  font-variation-settings: 'wght' var(--font-weight-normal);
   color: black;
   background-image: repeating-linear-gradient(90deg, #d3d3d3 0px 2px, transparent 2px 4px),
     repeating-linear-gradient(180deg, #d3d3d3 0px 2px, transparent 2px 4px),
@@ -21,10 +22,6 @@
   background-size: cover;
   background-attachment: fixed;
   margin: 0 auto;
-}
-
-@supports (font-variation-settings: normal) {
-  .page {}
 }
 
 .header {
